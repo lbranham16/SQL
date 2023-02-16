@@ -1,0 +1,30 @@
+--Create Art Store Database
+
+CREATE TABLE art_store (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, quantity INTEGER, aisle INTEGER);
+
+INSERT INTO art_store VALUES (1, "eraser", 2.99, 5, 9);
+INSERT INTO art_store VALUES (2, "pencil", 7.99, 75, 3);
+INSERT INTO art_store VALUES (3, "paper", 4.99, 45, 2);
+INSERT INTO art_store VALUES (4, "marker", 12.99, 25, 1);
+INSERT INTO art_store VALUES (5, "pen", 4.99, 7, 5);
+INSERT INTO art_store VALUES (6, "ruler", 11.99, 9, 1);
+INSERT INTO art_store VALUES (7, "charcoal", 1.99, 15, 7);
+INSERT INTO art_store VALUES (8, "brushes", 9.99, 55, 7);
+INSERT INTO art_store VALUES (9, "paint", 5.99, 5, 3);
+INSERT INTO art_store VALUES (10, "lead", 5.99, 42, 9);
+INSERT INTO art_store VALUES (11, "canvas", 2.99, 99, 6);
+INSERT INTO art_store VALUES (12, "easel", 9.99, 0, 2);
+INSERT INTO art_store VALUES (13, "cart", 22.99, 11, 2);
+INSERT INTO art_store VALUES (14, "table", 200.99, 9, 6);
+INSERT INTO art_store VALUES (15, "scissors", 5.99, 4, 3);
+
+-- display the database ordered by price
+SELECT * FROM art_store
+ORDER BY price desc;
+
+
+-- display item, price and quantity ordered by price
+SELECT item,price,quantity FROM art_store ORDER BY price;
+
+-- display total sum of items in the art_store 
+SELECT SUM(quantity) FROM art_store;
