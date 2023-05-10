@@ -63,10 +63,10 @@ LIMIT 5)
 
 
 --Selecting the average danceability from the top 10 most popular songs
---SELECT AVG(danceability) 
-FROM BIT_DB.Spotifydata
-WHERE popularity = (
-SELECT popularity FROM BIT_DB.Spotifydata
+--WITH tempTable AS (
+SELECT danceability, popularity
+FROM Spotifydata
 ORDER BY popularity DESC
-LIMIT 10
-);
+LIMIT 10)
+SELECT AVG(danceability) FROM tempTable
+
